@@ -1,13 +1,26 @@
-import { ArrowButton } from 'components/arrow-button';
+/*import { ArrowButton } from 'components/arrow-button';*/
 import { Button } from 'components/button';
-
+import clsx from 'clsx';
+import { ReactNode } from 'react';
 import styles from './ArticleParamsForm.module.scss';
 
-export const ArticleParamsForm = () => {
+interface IArticleParamsForm {
+	showMenu: boolean;
+	arrowButton: ReactNode;
+}
+
+export const ArticleParamsForm = ({
+	showMenu,
+	arrowButton,
+}: IArticleParamsForm) => {
 	return (
 		<>
-			<ArrowButton />
-			<aside className={styles.container}>
+			{arrowButton}
+			<aside
+				className={clsx({
+					[styles.container]: true,
+					[styles.container_open]: showMenu,
+				})}>
 				<form className={styles.form}>
 					<div className={styles.bottomContainer}>
 						<Button title='Сбросить' type='reset' />
