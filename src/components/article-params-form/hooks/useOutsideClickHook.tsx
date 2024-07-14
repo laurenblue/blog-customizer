@@ -7,7 +7,7 @@ interface IOutsideClickHook {
 	arrowButtonRef: React.RefObject<HTMLElement>;
 }
 
-export function outsideClick({
+export function useOutsideClick({
 	asideRef,
 	arrowButtonRef,
 	showMenu,

@@ -18,7 +18,7 @@ import { Text } from '../text';
 import { Select } from '../select';
 import { RadioGroup } from '../radio-group';
 import { Separator } from '../separator';
-import { outsideClick } from './hooks/outsideClickHook';
+import { useOutsideClick } from './hooks/useOutsideClickHook';
 
 type IStyle = {
 	[K in keyof ArticleStateType]: string;
@@ -36,7 +36,7 @@ export const ArticleParamsForm = ({
 	const asideRef = useRef<HTMLElement | null>(null);
 	const arrowButtonRef = useRef<HTMLDivElement | null>(null);
 
-	outsideClick({
+	useOutsideClick({
 		asideRef,
 		arrowButtonRef,
 		showMenu,
